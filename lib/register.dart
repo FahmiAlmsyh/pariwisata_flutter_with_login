@@ -10,11 +10,11 @@ class Register extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               Center(
@@ -31,88 +31,88 @@ class Register extends StatelessWidget {
                 style: GoogleFonts.poppins(),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Text(
                 "Username",
                 style: GoogleFonts.poppins(fontSize: 14),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Hendra Nugraha",
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
                 "Email",
                 style: GoogleFonts.poppins(fontSize: 14),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Example@gmail.com",
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
                 "Password",
                 style: GoogleFonts.poppins(fontSize: 14),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               TextFormField(
                 decoration: InputDecoration(
                     hintText: "********",
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     suffixIcon: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.remove_red_eye_outlined))),
+                        icon: const Icon(Icons.remove_red_eye_outlined))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
                 "Confirm Password",
                 style: GoogleFonts.poppins(fontSize: 14),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               TextFormField(
                 decoration: InputDecoration(
                     hintText: "********",
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     suffixIcon: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.remove_red_eye_outlined))),
+                        icon: const Icon(Icons.remove_red_eye_outlined))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text("Sign Up"),
+                  child: const Text("Sign Up"),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.pinkAccent,
                       foregroundColor: Colors.white),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               Row(
@@ -124,17 +124,12 @@ class Register extends StatelessWidget {
                       style: GoogleFonts.poppins(),
                     ),
                     Container(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
-                          },
-                          child: Text('Sign In'),
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
-                              foregroundColor: Colors.white
-                          ),
-                        ))
+                        child: TextButton(onPressed: (){
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const login()));
+                        }, child: Text('Sign In', style: GoogleFonts.poppins(
+                          color: Colors.blue
+                        ),))
+                    ),
                   ]),
             ],
           ),
